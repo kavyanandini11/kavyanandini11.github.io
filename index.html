@@ -1,0 +1,1981 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kavya Nandini Allamsetty — ML Engineer &amp; Data Analyst</title>
+<meta name="description" content="Final-year AI &amp; Data Science student building machine learning, deep learning, generative AI (RAG), and data analytics solutions in Python and SQL. Open to Data Analyst, Data Scientist, and ML Engineer roles.">
+<meta name="author" content="Kavya Nandini Allamsetty">
+<link rel="canonical" href="https://kavyanandini11.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kavya Nandini Allamsetty — ML Engineer &amp; Data Analyst">
+<meta property="og:description" content="Final-year AI &amp; Data Science student building predictive models across machine learning, deep learning, and data analytics.">
+<meta property="og:url" content="https://kavyanandini11.github.io/">
+<meta property="og:image" content="https://kavyanandini11.github.io/og-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kavya Nandini Allamsetty — machine learning, deep learning, and data analytics portfolio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kavyanandini11.github.io/og-preview.png">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0a0a'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='58' font-style='italic' fill='%23d4a574' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root,
+[data-theme="dark"]{
+  --bg:#0a0a0a;
+  --bg-soft:#111111;
+  --bg-card:#161616;
+  --border:#222;
+  --border-soft:#1a1a1a;
+  --text:#f4f1ec;
+  --text-muted:#888;
+  --text-dim:#808080;
+  --accent:#d4a574;
+  --accent-soft:#e8c9a0;
+  --nav-bg:rgba(10,10,10,0.85);
+  --grain-opacity:0.04;
+  --display:'Fraunces', Georgia, serif;
+  --sans:'Inter', system-ui, sans-serif;
+  --mono:'JetBrains Mono', monospace;
+}
+[data-theme="light"]{
+  --bg:#f5f1ea;
+  --bg-soft:#ede7dc;
+  --bg-card:#e6dfd1;
+  --border:#d4c9b3;
+  --border-soft:#dccfb8;
+  --text:#1a1612;
+  --text-muted:#5c5448;
+  --text-dim:#6b6154;
+  --accent:#8b5a2b;
+  --accent-soft:#a06d3d;
+  --nav-bg:rgba(245,241,234,0.85);
+  --grain-opacity:0.06;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--sans);
+  font-weight:400;
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  transition:background 0.35s ease, color 0.35s ease;
+}
+
+/* Grain overlay */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+  opacity:var(--grain-opacity);
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 32px;
+  position:relative;
+  z-index:2;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:100;
+  background:var(--nav-bg);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border-soft);
+}
+.nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:20px 32px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.logo{
+  font-family:var(--display);
+  font-weight:500;
+  font-size:1.05rem;
+  letter-spacing:-0.01em;
+}
+.logo span{font-style:italic;color:var(--accent);}
+.nav-links{
+  display:flex;
+  gap:32px;
+  list-style:none;
+}
+.nav-links a{
+  color:var(--text-muted);
+  text-decoration:none;
+  font-size:0.85rem;
+  font-weight:500;
+  transition:color 0.2s;
+}
+.nav-links a:hover{color:var(--text);}
+@media(max-width:768px){.nav-links{display:none;}}
+
+/* HERO */
+.hero{
+  padding:160px 0 100px;
+  position:relative;
+}
+.hero-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:8px 16px;
+  border:1px solid var(--border);
+  border-radius:100px;
+  font-size:0.78rem;
+  color:var(--text-muted);
+  font-family:var(--mono);
+  margin-bottom:40px;
+  background:var(--bg-soft);
+}
+.hero-tag::before{
+  content:'';
+  width:6px;height:6px;
+  background:var(--accent);
+  border-radius:50%;
+  box-shadow:0 0 12px var(--accent);
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{
+  0%,100%{opacity:1;}
+  50%{opacity:0.4;}
+}
+.hero h1{
+  font-family:var(--display);
+  font-weight:400;
+  font-size:clamp(2.2rem,5.5vw,4.5rem);
+  line-height:1.05;
+  letter-spacing:-0.03em;
+  margin-bottom:32px;
+  max-width:1000px;
+}
+.hero h1 em{
+  font-style:italic;
+  color:var(--accent);
+  font-weight:400;
+}
+.hero-desc{
+  font-size:1.1rem;
+  color:var(--text-muted);
+  max-width:640px;
+  margin-bottom:48px;
+  line-height:1.7;
+}
+.hero-desc strong{color:var(--text);font-weight:500;}
+.hero-cta{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-bottom:80px;
+}
+
+/* Hero two-column layout */
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr;
+  gap:60px;
+  align-items:center;
+  margin-bottom:60px;
+}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:40px;}
+}
+.hero-photo{
+  position:relative;
+  aspect-ratio:4/5;
+  border-radius:12px;
+  overflow:hidden;
+  max-width:420px;
+  justify-self:end;
+}
+@media(max-width:900px){
+  .hero-photo{justify-self:start;max-width:340px;}
+}
+.hero-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.btn{
+  padding:14px 26px;
+  border-radius:100px;
+  font-size:0.9rem;
+  font-weight:500;
+  text-decoration:none;
+  transition:all 0.25s;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  cursor:pointer;
+  border:none;
+}
+.btn-primary{
+  background:var(--accent);
+  color:var(--bg);
+}
+.btn-primary:hover{
+  background:var(--accent-soft);
+  transform:translateY(-2px);
+}
+[data-theme="light"] .btn-primary{color:#fff;}
+.btn-secondary{
+  background:transparent;
+  color:var(--text);
+  border:1px solid var(--border);
+}
+.btn-secondary:hover{
+  border-color:var(--accent);
+  color:var(--accent);
+}
+
+/* Theme toggle */
+.theme-toggle{
+  background:transparent;
+  border:1px solid var(--border);
+  color:var(--text);
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:all 0.25s;
+  margin-left:24px;
+}
+.theme-toggle:hover{
+  border-color:var(--accent);
+  color:var(--accent);
+  transform:rotate(15deg);
+}
+.theme-toggle svg{width:16px;height:16px;}
+.theme-toggle .icon-sun{display:none;}
+.theme-toggle .icon-moon{display:block;}
+[data-theme="light"] .theme-toggle .icon-sun{display:block;}
+[data-theme="light"] .theme-toggle .icon-moon{display:none;}
+.nav-right{display:flex;align-items:center;}
+@media(max-width:768px){.theme-toggle{margin-left:0;}}
+
+/* Quick facts grid */
+.facts{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:1px;
+  background:var(--border);
+  border:1px solid var(--border);
+  border-radius:12px;
+  overflow:hidden;
+}
+.fact{
+  background:var(--bg-soft);
+  padding:24px;
+}
+.fact-label{
+  font-family:var(--mono);
+  font-size:0.7rem;
+  color:var(--text-dim);
+  text-transform:uppercase;
+  letter-spacing:0.1em;
+  margin-bottom:8px;
+}
+.fact-value{
+  font-family:var(--display);
+  font-size:1.1rem;
+  font-weight:500;
+  color:var(--text);
+}
+.fact-value em{font-style:italic;color:var(--accent);}
+
+/* SECTION */
+section{padding:100px 0;position:relative;}
+.section-num{
+  font-family:var(--mono);
+  font-size:0.75rem;
+  color:var(--text-dim);
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  margin-bottom:24px;
+  display:block;
+}
+.section-title{
+  font-family:var(--display);
+  font-weight:400;
+  font-size:clamp(2rem,5vw,3.8rem);
+  line-height:1.1;
+  letter-spacing:-0.02em;
+  margin-bottom:24px;
+  max-width:900px;
+}
+.section-title em{font-style:italic;color:var(--accent);}
+.section-intro{
+  font-size:1.05rem;
+  color:var(--text-muted);
+  max-width:640px;
+  margin-bottom:60px;
+  line-height:1.7;
+}
+
+/* ABOUT */
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:start;
+}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:40px;}}
+.about-text p{
+  color:var(--text-muted);
+  margin-bottom:20px;
+  font-size:1rem;
+  line-height:1.8;
+}
+.about-text strong{color:var(--text);font-weight:500;}
+.about-stats{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:32px;
+}
+.stat{
+  border-top:1px solid var(--border);
+  padding-top:20px;
+}
+.stat-num{
+  font-family:var(--display);
+  font-size:2.8rem;
+  font-weight:400;
+  letter-spacing:-0.03em;
+  line-height:1;
+  margin-bottom:8px;
+}
+.stat-num em{font-style:italic;color:var(--accent);}
+.stat-label{
+  font-size:0.85rem;
+  color:var(--text-muted);
+}
+
+/* PROJECTS */
+.projects-grid{
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
+.project{
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:0;
+  background:var(--bg-soft);
+  transition:all 0.3s;
+  position:relative;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:340px 1fr;
+  gap:0;
+}
+@media(max-width:880px){
+  .project{grid-template-columns:1fr;}
+}
+.project-visual{
+  position:relative;
+  background:var(--bg-card);
+  border-right:1px solid var(--border);
+  min-height:280px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+@media(max-width:880px){
+  .project-visual{
+    border-right:none;
+    border-bottom:1px solid var(--border);
+    min-height:220px;
+  }
+}
+.project-visual svg{
+  width:100%;
+  height:100%;
+  display:block;
+}
+.project-content{
+  padding:40px;
+}
+.project::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;
+  width:3px;height:0;
+  background:var(--accent);
+  transition:height 0.4s ease;
+  z-index:5;
+}
+.project:hover::before{height:100%;}
+.project:hover{
+  border-color:#333;
+  transform:translateY(-2px);
+}
+.project:hover .project-visual{
+  background:linear-gradient(135deg, var(--bg-card), var(--bg-soft));
+}
+
+/* Visual element animations */
+@keyframes float-slow{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-6px);}
+}
+@keyframes pulse-dot{
+  0%,100%{opacity:0.4;}
+  50%{opacity:1;}
+}
+@keyframes draw-line{
+  from{stroke-dashoffset:1000;}
+  to{stroke-dashoffset:0;}
+}
+@keyframes shift-bars{
+  0%,100%{transform:scaleY(1);}
+  50%{transform:scaleY(0.6);}
+}
+.viz-float{animation:float-slow 4s ease-in-out infinite;}
+.viz-pulse{animation:pulse-dot 2.4s ease-in-out infinite;}
+.viz-line{
+  stroke-dasharray:1000;
+  animation:draw-line 3s ease-out forwards;
+}
+.viz-bar{transform-origin:bottom;animation:shift-bars 3s ease-in-out infinite;}
+.project-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  flex-wrap:wrap;
+  gap:16px;
+  margin-bottom:8px;
+}
+.project-num{
+  font-family:var(--mono);
+  font-size:0.75rem;
+  color:var(--text-dim);
+  letter-spacing:0.15em;
+}
+.project-date{
+  font-family:var(--mono);
+  font-size:0.75rem;
+  color:var(--text-muted);
+}
+.project h3{
+  font-family:var(--display);
+  font-weight:400;
+  font-size:clamp(1.6rem,3vw,2.2rem);
+  line-height:1.15;
+  letter-spacing:-0.02em;
+  margin:16px 0 20px;
+}
+.project h3 em{font-style:italic;color:var(--accent);}
+.project-desc{
+  color:var(--text-muted);
+  margin-bottom:24px;
+  line-height:1.7;
+  max-width:720px;
+}
+.project ul{
+  list-style:none;
+  margin-bottom:28px;
+}
+.project li{
+  color:var(--text-muted);
+  font-size:0.95rem;
+  padding:8px 0 8px 24px;
+  position:relative;
+  line-height:1.6;
+}
+.project li::before{
+  content:'→';
+  position:absolute;
+  left:0;
+  color:var(--accent);
+}
+.tech-stack{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.tech{
+  font-family:var(--mono);
+  font-size:0.72rem;
+  padding:5px 12px;
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:100px;
+  color:var(--text-muted);
+}
+
+/* EXPERIENCE */
+.exp-card{
+  border:1px solid var(--border);
+  border-radius:16px;
+  background:var(--bg-soft);
+  padding:40px;
+  position:relative;
+  overflow:hidden;
+}
+.exp-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;
+  width:3px;height:100%;
+  background:var(--accent);
+}
+.exp-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  flex-wrap:wrap;
+  gap:16px;
+  margin-bottom:20px;
+}
+.exp-role{
+  font-family:var(--display);
+  font-weight:400;
+  font-size:clamp(1.5rem,3vw,2rem);
+  line-height:1.15;
+  letter-spacing:-0.02em;
+}
+.exp-role em{font-style:italic;color:var(--accent);}
+.exp-company{
+  color:var(--text-muted);
+  font-size:1rem;
+  margin-top:6px;
+}
+.exp-company a{color:var(--text);text-decoration:none;border-bottom:1px solid var(--border);}
+.exp-company a:hover{color:var(--accent);border-bottom-color:var(--accent);}
+.exp-meta{
+  font-family:var(--mono);
+  font-size:0.75rem;
+  color:var(--text-muted);
+  border:1px solid var(--border);
+  border-radius:100px;
+  padding:6px 14px;
+  white-space:nowrap;
+}
+.exp-desc{
+  color:var(--text-muted);
+  line-height:1.7;
+  max-width:760px;
+  margin-bottom:20px;
+}
+.exp-card ul{list-style:none;margin-bottom:28px;}
+.exp-card li{
+  color:var(--text-muted);
+  font-size:0.95rem;
+  padding:8px 0 8px 24px;
+  position:relative;
+  line-height:1.6;
+}
+.exp-card li::before{
+  content:'→';
+  position:absolute;
+  left:0;
+  color:var(--accent);
+}
+.exp-card li strong{color:var(--text);font-weight:500;}
+@media(max-width:600px){.exp-card{padding:28px 24px;}}
+.exp-list{display:flex;flex-direction:column;gap:24px;}
+.exp-sub{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);margin:4px 0 10px;}
+
+/* SKILLS */
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:32px;
+}
+.skill-group{
+  border-top:1px solid var(--border);
+  padding-top:24px;
+}
+.skill-group h4{
+  font-family:var(--display);
+  font-weight:500;
+  font-size:1.15rem;
+  margin-bottom:20px;
+  font-style:italic;
+  color:var(--accent);
+}
+.skill-list{list-style:none;}
+.skill-list li{
+  color:var(--text-muted);
+  padding:6px 0;
+  font-size:0.95rem;
+  border-bottom:1px solid var(--border-soft);
+}
+.skill-list li:last-child{border-bottom:none;}
+
+/* CERTS */
+.cert-summary{
+  display:flex;flex-wrap:wrap;gap:10px;margin:-28px 0 56px;
+}
+.cert-summary span{
+  font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;
+  color:var(--text-muted);border:1px solid var(--border);border-radius:100px;padding:7px 14px;
+}
+.cert-summary span b{color:var(--accent);font-weight:500;margin-right:6px;}
+.cert-group{margin-bottom:56px;}
+.cert-group:last-child{margin-bottom:0;}
+.cert-group-head{
+  display:flex;align-items:baseline;justify-content:space-between;gap:16px;
+  border-top:1px solid var(--border);padding-top:20px;margin-bottom:20px;
+}
+.cert-group-head h3{
+  font-family:var(--display);font-weight:500;font-style:italic;font-size:1.3rem;color:var(--accent);
+}
+.cert-group-count{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.1em;color:var(--text-dim);}
+.cert-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(270px,1fr));
+  gap:16px;
+}
+.cert{
+  background:var(--bg-soft);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:24px;
+  transition:all 0.25s;
+  display:flex;flex-direction:column;
+  text-decoration:none;color:inherit;
+  position:relative;
+}
+.cert:hover{
+  border-color:var(--accent);
+  background:var(--bg-card);
+  transform:translateY(-2px);
+}
+.cert-type{
+  font-family:var(--mono);
+  font-size:0.66rem;
+  color:var(--text-dim);
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+.cert h4{
+  font-family:var(--display);
+  font-weight:500;
+  font-size:1.1rem;
+  line-height:1.3;
+  margin-bottom:8px;
+  letter-spacing:-0.01em;
+  color:var(--text);
+}
+.cert-detail{font-size:0.82rem;color:var(--text-dim);margin-bottom:6px;}
+.cert-source{
+  font-size:0.88rem;
+  color:var(--text-muted);
+  margin-bottom:20px;
+}
+.cert-verify{
+  margin-top:auto;
+  font-family:var(--mono);font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--accent);display:inline-flex;align-items:center;gap:6px;
+}
+.cert-verify svg{width:12px;height:12px;transition:transform 0.25s;}
+.cert:hover .cert-verify svg{transform:translate(2px,-2px);}
+.cert-featured{border-color:var(--accent);}
+.cert-badge{
+  position:absolute;top:20px;right:20px;
+  font-family:var(--mono);font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;
+  background:var(--accent);color:var(--bg);border-radius:100px;padding:3px 9px;font-weight:500;
+}
+[data-theme="light"] .cert-badge{color:#fff;}
+
+/* EDUCATION */
+.edu-card{
+  background:var(--bg-soft);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:40px;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:32px;
+  align-items:center;
+}
+@media(max-width:700px){.edu-card{grid-template-columns:1fr;}}
+.edu-info h3{
+  font-family:var(--display);
+  font-weight:500;
+  font-size:1.5rem;
+  margin-bottom:6px;
+  letter-spacing:-0.01em;
+}
+.edu-degree{
+  color:var(--text-muted);
+  font-size:1rem;
+  margin-bottom:8px;
+}
+.edu-meta{
+  font-family:var(--mono);
+  font-size:0.8rem;
+  color:var(--text-dim);
+  margin-bottom:16px;
+}
+.edu-courses{
+  color:var(--text-muted);
+  font-size:0.92rem;
+}
+.edu-courses strong{color:var(--text);font-weight:500;}
+.cgpa{
+  text-align:right;
+  border-left:1px solid var(--border);
+  padding-left:32px;
+}
+@media(max-width:700px){.cgpa{text-align:left;border-left:none;border-top:1px solid var(--border);padding-left:0;padding-top:20px;}}
+.cgpa-num{
+  font-family:var(--display);
+  font-size:3.2rem;
+  font-weight:400;
+  letter-spacing:-0.03em;
+  line-height:1;
+}
+.cgpa-num em{font-style:italic;color:var(--accent);}
+.cgpa-label{
+  font-size:0.85rem;
+  color:var(--text-muted);
+  margin-top:6px;
+}
+
+/* CONTACT */
+.contact-section{
+  background:linear-gradient(180deg,transparent,var(--bg-soft));
+  border-top:1px solid var(--border);
+  margin-top:80px;
+}
+.contact-inner{
+  text-align:left;
+  padding:40px 0 20px;
+}
+.contact-links{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-top:40px;
+}
+
+/* FOOTER */
+footer{
+  border-top:1px solid var(--border-soft);
+  padding:32px 0;
+  margin-top:40px;
+}
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:16px;
+  font-family:var(--mono);
+  font-size:0.78rem;
+  color:var(--text-dim);
+}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(20px);transition:all 0.7s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+
+/* ---------- Accessibility & polish (added) ---------- */
+.skip-link{
+  position:absolute;
+  left:-9999px;
+  top:0;
+  z-index:200;
+  background:var(--accent);
+  color:#0a0a0a;
+  padding:10px 18px;
+  font-size:0.8rem;
+  font-weight:600;
+  border-radius:0 0 6px 0;
+}
+.skip-link:focus{left:0;}
+a:focus-visible,
+button:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+  border-radius:2px;
+}
+@media (prefers-reduced-motion: reduce){
+  *{animation:none !important; transition:none !important;}
+  html{scroll-behavior:auto;}
+  .reveal{opacity:1; transform:none;}
+}
+
+/* Mobile navigation — scrollable instead of hidden */
+@media(max-width:768px){
+  .nav-inner{padding:14px 20px; gap:12px;}
+  .nav-links{
+    display:flex;
+    gap:18px;
+    overflow-x:auto;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+  }
+  .nav-links::-webkit-scrollbar{display:none;}
+  .nav-links a{font-size:0.78rem; white-space:nowrap;}
+  .logo{font-size:0.95rem;}
+}
+@media(max-width:520px){
+  .container{padding:0 20px;}
+  .nav-links{gap:14px;}
+}
+
+/* Nav resume link */
+.nav-resume{
+  color:var(--accent) !important;
+  border-bottom:1px solid transparent;
+}
+.nav-resume:hover{border-bottom-color:var(--accent);}
+
+/* ---------- Project metrics ---------- */
+.metrics{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:0 0 22px;
+}
+.metric{
+  border:1px solid var(--border);
+  background:var(--bg-soft);
+  border-radius:4px;
+  padding:8px 12px;
+  min-width:96px;
+}
+.metric-num{
+  font-family:var(--display);
+  font-size:1.15rem;
+  font-weight:600;
+  line-height:1.1;
+  color:var(--accent);
+}
+.metric-label{
+  font-family:var(--mono);
+  font-size:0.6rem;
+  letter-spacing:0.09em;
+  text-transform:uppercase;
+  color:var(--text-dim);
+  margin-top:4px;
+}
+
+/* Role / availability strip */
+.roles{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:28px;
+}
+.role-chip{
+  font-family:var(--mono);
+  font-size:0.68rem;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  border:1px solid var(--border);
+  border-radius:100px;
+  padding:7px 14px;
+}
+
+/* ---------- Contact details ---------- */
+.contact-details{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:1px;
+  background:var(--border-soft);
+  border:1px solid var(--border-soft);
+  border-radius:6px;
+  overflow:hidden;
+  margin-top:44px;
+  text-align:left;
+  max-width:820px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.contact-item{
+  background:var(--bg);
+  padding:22px 24px;
+}
+.contact-label{
+  font-family:var(--mono);
+  font-size:0.6rem;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--text-dim);
+  margin-bottom:8px;
+}
+.contact-item a,
+.contact-item span{
+  color:var(--text);
+  text-decoration:none;
+  font-size:0.9rem;
+  word-break:break-word;
+}
+.contact-item a:hover{color:var(--accent);}
+
+/* Footer links */
+.footer-links{display:flex; gap:22px; flex-wrap:wrap;}
+.footer-links a{color:var(--text-muted); text-decoration:none; font-size:0.8rem;}
+.footer-links a:hover{color:var(--accent);}
+
+/* ---------- Spanish greeting & sign-off ---------- */
+.script{
+  font-family:'Dancing Script', 'Brush Script MT', cursive;
+  color:var(--accent);
+  line-height:1;
+  font-weight:600;
+}
+.greeting{
+  margin-bottom:26px;
+}
+.greeting .script{
+  display:block;
+  font-size:clamp(2.6rem, 6vw, 4rem);
+  margin-bottom:6px;
+}
+.greeting-sub{
+  font-family:var(--mono);
+  font-size:0.68rem;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--text-dim);
+}
+.greeting-sub .en{
+  display:block;
+  margin-top:5px;
+  letter-spacing:0.14em;
+  color:var(--text-muted);
+  text-transform:none;
+  font-family:var(--sans);
+  font-size:0.78rem;
+}
+
+/* Sign-off band above the footer */
+.signoff{
+  border-top:1px solid var(--border-soft);
+  padding:90px 0 80px;
+  text-align:center;
+}
+.signoff .script{
+  display:block;
+  font-size:clamp(3rem, 8vw, 5rem);
+  margin-bottom:14px;
+}
+.signoff-line{
+  font-family:var(--display);
+  font-size:1.05rem;
+  font-style:italic;
+  color:var(--text);
+  max-width:520px;
+  margin:0 auto 10px;
+  line-height:1.6;
+}
+.signoff-meta{
+  font-family:var(--mono);
+  font-size:0.65rem;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--text-dim);
+}
+@media(max-width:600px){
+  .signoff{padding:70px 0 60px;}
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo">Kavya <span>Nandini.</span></div>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="nav-resume" href="resume.pdf" target="_blank" rel="noopener">Résumé</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch between light and dark mode" title="Switch between light and dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="main">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="greeting">
+          <span class="script" lang="es">¡Hola!</span>
+          <span class="greeting-sub" lang="es">Bienvenidos a mi portafolio
+            <span class="en" lang="en">Welcome to my portfolio.</span>
+          </span>
+        </div>
+        <div class="hero-tag">Final-year AI &amp; Data Science · Open to 2027 roles</div>
+        <h1>Kavya Nandini Allamsetty — machine learning, <em>measured honestly.</em></h1>
+        <p class="hero-desc">
+          A final-year B.E. student in Artificial Intelligence &amp; Data Science at
+          <strong>VVIT College, Namburu</strong>. I build predictive models and
+          AI-driven solutions across <strong>machine learning</strong>, <strong>deep learning</strong>,
+          and <strong>data analytics</strong> — from a CNN brain-tumour classifier and a real-time
+          face-recognition system to a RAG assistant that answers questions from research papers.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View projects →</a>
+          <a href="resume.pdf" target="_blank" rel="noopener" class="btn btn-secondary">Download résumé</a>
+        </div>
+        <div class="roles">
+          <span class="role-chip">Data Analyst</span>
+          <span class="role-chip">Data Scientist</span>
+          <span class="role-chip">ML Engineer</span>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="kavya.png" alt="Portrait of Kavya Nandini Allamsetty" loading="eager">
+      </div>
+    </div>
+
+    <div class="facts">
+      <div class="fact">
+        <div class="fact-label">Focus</div>
+        <div class="fact-value"><em>Machine</em> Learning</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">College</div>
+        <div class="fact-value">VVIT, Namburu</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">GPA</div>
+        <div class="fact-value"><em>8.60</em> / 10</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">Location</div>
+        <div class="fact-value">Guntur, IN</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">Graduating</div>
+        <div class="fact-value">April <em>2027</em></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about" aria-labelledby="about-title">
+  <div class="container">
+    <span class="section-num">01 / About</span>
+    <h2 class="section-title" id="about-title">Turning data into decisions you can <em>act on.</em></h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I'm a final-year Artificial Intelligence and Data Science student with hands-on
+          experience building predictive models across <strong>machine learning</strong>,
+          <strong>deep learning</strong>, and <strong>data analytics</strong>. I work primarily in
+          <strong>Python</strong> and <strong>SQL</strong>, with practical projects in computer
+          vision, NLP, and data visualisation.
+        </p>
+        <p>
+          My work covers the full workflow — cleaning and exploring data, engineering features,
+          training and tuning models, and evaluating results with cross-validation, confusion
+          matrices, and held-out test sets rather than a single headline number. Recent projects
+          include a <strong>CNN brain-tumour classifier</strong> using transfer learning with VGG16,
+          an <strong>XGBoost drug recommendation model</strong>, a <strong>real-time facial
+          recognition attendance system</strong> integrated with MySQL, and a
+          <strong>RAG research paper assistant</strong> that answers questions from uploaded PDFs
+          with page-level citations, built with FastAPI, FAISS, and LLMs.
+        </p>
+        <p>
+          Alongside modelling, I use <strong>Power BI</strong> and <strong>Excel</strong> to turn
+          analysis into dashboards and reports that non-technical stakeholders can read. I'm
+          seeking an entry-level role as a Data Analyst, Data Scientist, or Machine Learning
+          Engineer where I can deliver measurable, data-driven results.
+        </p>
+      </div>
+      <div class="about-stats">
+        <div class="stat">
+          <div class="stat-num"><em>96%</em></div>
+          <div class="stat-label">Best model test accuracy</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num"><em>4</em></div>
+          <div class="stat-label">End-to-end AI / ML projects</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num"><em>8.60</em></div>
+          <div class="stat-label">GPA out of 10</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num"><em>15</em></div>
+          <div class="stat-label">Certifications &amp; credentials</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" aria-labelledby="experience-title">
+  <div class="container">
+    <span class="section-num">02 / Experience</span>
+    <h2 class="section-title" id="experience-title">Where I've <em>worked.</em></h2>
+    <p class="section-intro">
+      Two internships applying machine learning and AI tools to real research, marketing, and
+      workflow-automation problems.
+    </p>
+
+    <div class="exp-list">
+    <article class="exp-card">
+      <div class="exp-head">
+        <div>
+          <h3 class="exp-role">AI &amp; Data Science <em>Intern</em></h3>
+          <p class="exp-company"><a href="https://studyeasy.org" target="_blank" rel="noopener">StudyEasy.org</a> · EdTech</p>
+        </div>
+        <span class="exp-meta">Aug 2026 · 1 month</span>
+      </div>
+      <p class="exp-desc">
+        Worked with the StudyEasy team to research emerging AI tools and put them to work
+        across marketing and community operations, using Claude as the core assistant
+        for research, content, and automation.
+      </p>
+      <ul>
+        <li><strong>Researched and evaluated AI tools</strong>, comparing their capabilities and identifying practical use cases for the team</li>
+        <li>Supported <strong>AI-driven marketing</strong>, using AI to plan, draft, and refine promotional content for online courses</li>
+        <li><strong>Experimented with Claude AI models</strong> on a range of tasks — prompting, research, content generation, and workflow design — to find what works best</li>
+        <li>Built <strong>workflow automation for Reddit, Facebook, and Skool</strong> using Claude, streamlining content and community tasks in a consistent, professional manner</li>
+      </ul>
+      <div class="tech-stack">
+        <span class="tech">Claude AI</span>
+        <span class="tech">Prompt Engineering</span>
+        <span class="tech">AI Research</span>
+        <span class="tech">AI Marketing</span>
+        <span class="tech">Workflow Automation</span>
+        <span class="tech">Reddit</span>
+        <span class="tech">Facebook</span>
+        <span class="tech">Skool</span>
+      </div>
+    </article>
+
+    <article class="exp-card">
+      <div class="exp-head">
+        <div>
+          <h3 class="exp-role">AI / Machine Learning <em>Engineer Intern</em></h3>
+          <p class="exp-company">Blackbucks Group</p>
+        </div>
+        <span class="exp-meta">Jun 2026 – Jul 2026 · 2 months</span>
+      </div>
+      <p class="exp-desc">
+        Designed and developed a <strong>Brain Tumour Detection</strong> system — a deep learning
+        model that classifies brain MRI scans into four categories (glioma, meningioma,
+        pituitary tumour, and no tumour), taking it from raw data to an evaluated model.
+      </p>
+      <p class="exp-sub">Project highlights</p>
+      <ul>
+        <li>Built a <strong>CNN classifier</strong> on a public Kaggle dataset of ~3,264 MRI images, reaching <strong>96% test accuracy</strong></li>
+        <li>Applied <strong>transfer learning with VGG16</strong> (ImageNet weights) and a custom classification head to get strong results from limited labelled medical data</li>
+        <li>Built the preprocessing pipeline with <strong>OpenCV</strong> — resizing scans to the 224×224 input VGG16 expects and normalising pixel values</li>
+        <li>Used <strong>data augmentation</strong> (rotation, flips, zoom) to reduce overfitting and help the model generalise</li>
+        <li>Evaluated with a <strong>confusion matrix</strong> and per-class precision and recall, not just overall accuracy, to catch classes the model confused</li>
+      </ul>
+      <div class="tech-stack">
+        <span class="tech">Python</span>
+        <span class="tech">TensorFlow</span>
+        <span class="tech">Keras</span>
+        <span class="tech">VGG16</span>
+        <span class="tech">Transfer Learning</span>
+        <span class="tech">OpenCV</span>
+        <span class="tech">NumPy</span>
+      </div>
+    </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" aria-labelledby="projects-title">
+  <div class="container">
+    <span class="section-num">03 / Selected work</span>
+    <h2 class="section-title" id="projects-title">Projects I've <em>built.</em></h2>
+    <p class="section-intro">
+      Four applied projects spanning deep learning, gradient boosting, computer vision, and
+      generative AI — each built, evaluated, and reported with the metrics that matter.
+    </p>
+
+    <div class="projects-grid">
+
+      <!-- PROJECT 1 — Brain Tumor Detection -->
+      <article class="project">
+        <div class="project-visual">
+          <svg viewBox="0 0 340 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Diagram of an MRI scan passing through convolutional layers to a four-class prediction">
+            <defs>
+              <pattern id="gridA" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke-width="0.5" opacity="0.5" style="stroke:var(--border)"/>
+              </pattern>
+            </defs>
+            <rect width="340" height="280" fill="url(#gridA)"/>
+
+            <!-- MRI slice -->
+            <g transform="translate(28, 78)">
+              <rect width="86" height="100" rx="4" stroke-width="1" style="fill:var(--bg-soft);stroke:var(--border)"/>
+              <ellipse cx="43" cy="50" rx="30" ry="37" fill="none" stroke-width="1.2" opacity="0.7" style="stroke:var(--text-muted)"/>
+              <ellipse cx="43" cy="50" rx="21" ry="27" fill="none" stroke-width="0.8" opacity="0.45" style="stroke:var(--text-muted)"/>
+              <path d="M 43 20 L 43 80" stroke-width="0.7" opacity="0.35" style="stroke:var(--text-muted)"/>
+              <!-- tumour region -->
+              <circle cx="54" cy="38" r="7" opacity="0.85" style="fill:var(--accent)"/>
+              <circle cx="54" cy="38" r="12" fill="none" stroke-width="1" stroke-dasharray="2,2" class="viz-pulse" style="stroke:var(--accent)"/>
+              <text x="43" y="96" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6" letter-spacing="1" style="fill:var(--text-dim)">MRI SLICE</text>
+            </g>
+
+            <!-- Conv layers -->
+            <g transform="translate(140, 70)">
+              <rect x="0" y="10" width="16" height="96" rx="2" stroke-width="1" style="fill:var(--bg-card);stroke:var(--border)"/>
+              <rect x="24" y="22" width="14" height="72" rx="2" stroke-width="1" style="fill:var(--bg-card);stroke:var(--border)"/>
+              <rect x="46" y="34" width="12" height="48" rx="2" stroke-width="1" style="fill:var(--bg-card);stroke:var(--accent)" opacity="0.8"/>
+              <rect x="66" y="44" width="10" height="28" rx="2" stroke-width="1" style="fill:var(--bg-card);stroke:var(--accent)"/>
+              <text x="38" y="126" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6" letter-spacing="1" style="fill:var(--text-dim)">CONV · POOL · VGG16</text>
+            </g>
+
+            <!-- flow arrows -->
+            <path d="M 120 128 L 136 128" stroke-width="1" opacity="0.6" stroke-dasharray="3,3" style="stroke:var(--accent)"/>
+            <path d="M 222 128 L 238 128" stroke-width="1" opacity="0.6" stroke-dasharray="3,3" style="stroke:var(--accent)"/>
+            <polygon points="238,125 243,128 238,131" opacity="0.7" style="fill:var(--accent)"/>
+
+            <!-- 4-class output -->
+            <g transform="translate(248, 88)">
+              <rect width="66" height="16" rx="2" stroke-width="0.8" style="fill:var(--bg-soft);stroke:var(--border)"/>
+              <text x="6" y="11" font-family="JetBrains Mono, monospace" font-size="6" style="fill:var(--text-muted)">glioma</text>
+              <rect y="21" width="66" height="16" rx="2" opacity="0.9" style="fill:var(--accent)"/>
+              <text x="6" y="32" font-family="JetBrains Mono, monospace" font-size="6" font-weight="600" style="fill:var(--bg)">meningioma</text>
+              <rect y="42" width="66" height="16" rx="2" stroke-width="0.8" style="fill:var(--bg-soft);stroke:var(--border)"/>
+              <text x="6" y="53" font-family="JetBrains Mono, monospace" font-size="6" style="fill:var(--text-muted)">pituitary</text>
+              <rect y="63" width="66" height="16" rx="2" stroke-width="0.8" style="fill:var(--bg-soft);stroke:var(--border)"/>
+              <text x="6" y="74" font-family="JetBrains Mono, monospace" font-size="6" style="fill:var(--text-muted)">no tumor</text>
+            </g>
+
+            <text x="170" y="248" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="2" style="fill:var(--text-dim)">4-CLASS CLASSIFICATION</text>
+          </svg>
+        </div>
+        <div class="project-content">
+          <div class="project-head">
+            <span class="project-num">01 / Deep learning · Computer vision</span>
+          </div>
+          <h3>Brain Tumour <em>Detection</em> (MRI)</h3>
+          <p class="project-desc">
+            A convolutional neural network that classifies brain MRI scans into four categories.
+            Built on a public Kaggle dataset of roughly 3,264 images, using transfer learning to
+            get strong accuracy from a limited medical dataset. Developed during my
+            <strong>AI / ML Engineer internship at Blackbucks Group</strong>.
+          </p>
+          <div class="metrics">
+            <div class="metric"><div class="metric-num">96%</div><div class="metric-label">Test accuracy</div></div>
+            <div class="metric"><div class="metric-num">~3,264</div><div class="metric-label">MRI images</div></div>
+            <div class="metric"><div class="metric-num">4</div><div class="metric-label">Tumour classes</div></div>
+          </div>
+          <ul>
+            <li>CNN classifier trained on a 4-class Kaggle MRI dataset, reaching <strong>96% test accuracy</strong></li>
+            <li>Transfer learning with <strong>VGG16</strong> (ImageNet weights) plus a custom classification head to compensate for limited labelled medical data</li>
+            <li>OpenCV preprocessing pipeline: scans resized to 224×224 and pixel values normalised before training</li>
+            <li>Data augmentation (rotation, flips, zoom) to reduce overfitting on the training set</li>
+            <li>Evaluated with a confusion matrix and per-class precision and recall, not just overall accuracy</li>
+          </ul>
+          <div class="tech-stack">
+            <span class="tech">Python</span>
+            <span class="tech">TensorFlow</span>
+            <span class="tech">Keras</span>
+            <span class="tech">VGG16</span>
+            <span class="tech">OpenCV</span>
+            <span class="tech">NumPy</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 2 — Drug Prediction -->
+      <article class="project">
+        <div class="project-visual">
+          <svg viewBox="0 0 340 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Decision tree ensemble diagram predicting a drug and dosage">
+            <defs>
+              <pattern id="gridB" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke-width="0.5" opacity="0.5" style="stroke:var(--border)"/>
+              </pattern>
+            </defs>
+            <rect width="340" height="280" fill="url(#gridB)"/>
+
+            <g stroke-width="1" fill="none" opacity="0.5" style="stroke:var(--text-muted)">
+              <line x1="170" y1="50" x2="100" y2="100"/>
+              <line x1="170" y1="50" x2="240" y2="100"/>
+              <line x1="100" y1="100" x2="65" y2="150"/>
+              <line x1="100" y1="100" x2="135" y2="150"/>
+              <line x1="240" y1="100" x2="205" y2="150"/>
+              <line x1="240" y1="100" x2="275" y2="150"/>
+              <line x1="65" y1="150" x2="50" y2="200"/>
+              <line x1="65" y1="150" x2="80" y2="200"/>
+              <line x1="135" y1="150" x2="120" y2="200"/>
+              <line x1="135" y1="150" x2="150" y2="200"/>
+              <line x1="205" y1="150" x2="190" y2="200"/>
+              <line x1="205" y1="150" x2="220" y2="200"/>
+              <line x1="275" y1="150" x2="260" y2="200"/>
+              <line x1="275" y1="150" x2="290" y2="200"/>
+            </g>
+
+            <g transform="translate(170, 50)">
+              <circle r="14" stroke-width="1.5" style="fill:var(--bg-card);stroke:var(--accent)"/>
+              <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" font-weight="600" style="fill:var(--accent)">age?</text>
+            </g>
+            <g transform="translate(100, 100)">
+              <circle r="11" stroke-width="1" style="fill:var(--bg-card);stroke:var(--text-muted)"/>
+              <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6" style="fill:var(--text-muted)">bp?</text>
+            </g>
+            <g transform="translate(240, 100)">
+              <circle r="11" stroke-width="1" style="fill:var(--bg-card);stroke:var(--text-muted)"/>
+              <text y="3" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6" style="fill:var(--text-muted)">na/k?</text>
+            </g>
+
+            <g class="viz-pulse" style="animation-delay:0s"><circle cx="65" cy="150" r="9" stroke-width="1" style="fill:var(--bg-card);stroke:var(--text-dim)"/></g>
+            <g class="viz-pulse" style="animation-delay:0.3s"><circle cx="135" cy="150" r="9" stroke-width="1" style="fill:var(--bg-card);stroke:var(--text-dim)"/></g>
+            <g class="viz-pulse" style="animation-delay:0.6s"><circle cx="205" cy="150" r="9" stroke-width="1" style="fill:var(--bg-card);stroke:var(--text-dim)"/></g>
+            <g class="viz-pulse" style="animation-delay:0.9s"><circle cx="275" cy="150" r="9" stroke-width="1" style="fill:var(--bg-card);stroke:var(--text-dim)"/></g>
+
+            <g>
+              <rect x="42" y="195" width="16" height="10" rx="2" stroke-width="0.5" style="fill:var(--bg-soft);stroke:var(--text-dim)"/>
+              <rect x="72" y="195" width="16" height="10" rx="2" stroke-width="0.5" style="fill:var(--bg-soft);stroke:var(--text-dim)"/>
+              <rect x="112" y="195" width="16" height="10" rx="2" opacity="0.7" style="fill:var(--accent)"/>
+              <rect x="142" y="195" width="16" height="10" rx="2" stroke-width="0.5" style="fill:var(--bg-soft);stroke:var(--text-dim)"/>
+              <rect x="182" y="195" width="16" height="10" rx="2" stroke-width="0.5" style="fill:var(--bg-soft);stroke:var(--text-dim)"/>
+              <rect x="212" y="195" width="16" height="10" rx="2" opacity="0.5" style="fill:var(--accent)"/>
+              <rect x="252" y="195" width="16" height="10" rx="2" stroke-width="0.5" style="fill:var(--bg-soft);stroke:var(--text-dim)"/>
+              <rect x="282" y="195" width="16" height="10" rx="2" stroke-width="0.5" style="fill:var(--bg-soft);stroke:var(--text-dim)"/>
+            </g>
+
+            <g transform="translate(170, 240)">
+              <text text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="2" style="fill:var(--text-dim)">XGBOOST &middot; ENSEMBLE</text>
+              <text y="15" text-anchor="middle" font-family="Fraunces, serif" font-size="11" font-style="italic" style="fill:var(--accent)">Drug &middot; dosage</text>
+            </g>
+          </svg>
+        </div>
+        <div class="project-content">
+          <div class="project-head">
+            <span class="project-num">02 / Machine learning · Healthcare</span>
+          </div>
+          <h3>Drug <em>Prediction</em> System</h3>
+          <p class="project-desc">
+            A gradient-boosted model that recommends drugs and dosages from patient features in
+            medical datasets. Designed as clinical decision support — a second opinion for
+            clinicians, never a replacement for one.
+          </p>
+          <div class="metrics">
+            <div class="metric"><div class="metric-num">95%</div><div class="metric-label">Accuracy</div></div>
+            <div class="metric"><div class="metric-num">200</div><div class="metric-label">Patient records</div></div>
+            <div class="metric"><div class="metric-num">CV</div><div class="metric-label">Cross-validated</div></div>
+          </div>
+          <ul>
+            <li><strong>XGBoost</strong> classifier trained on processed medical data, achieving <strong>95% accuracy</strong> across 200 patient records</li>
+            <li>Feature engineering on patient attributes to sharpen the signal available to the model</li>
+            <li>Cross-validation and feature-importance analysis to improve prediction reliability and interpretability</li>
+            <li>Evaluated on accuracy, precision, recall, and confusion matrix before any result was reported</li>
+          </ul>
+          <div class="tech-stack">
+            <span class="tech">Python</span>
+            <span class="tech">XGBoost</span>
+            <span class="tech">scikit-learn</span>
+            <span class="tech">Pandas</span>
+            <span class="tech">NumPy</span>
+            <span class="tech">Matplotlib</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 3 — Facial Recognition Attendance -->
+      <article class="project">
+        <div class="project-visual">
+          <svg viewBox="0 0 340 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Face detection frame writing an attendance record to a database table">
+            <defs>
+              <pattern id="gridC" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke-width="0.5" opacity="0.5" style="stroke:var(--border)"/>
+              </pattern>
+            </defs>
+            <rect width="340" height="280" fill="url(#gridC)"/>
+
+            <!-- camera frame -->
+            <g transform="translate(30, 60)">
+              <rect width="120" height="120" rx="4" stroke-width="1" style="fill:var(--bg-soft);stroke:var(--border)"/>
+              <!-- face -->
+              <ellipse cx="60" cy="58" rx="26" ry="32" fill="none" stroke-width="1.2" opacity="0.6" style="stroke:var(--text-muted)"/>
+              <circle cx="50" cy="50" r="2.5" style="fill:var(--text-muted)"/>
+              <circle cx="70" cy="50" r="2.5" style="fill:var(--text-muted)"/>
+              <path d="M 50 70 Q 60 77 70 70" fill="none" stroke-width="1.2" opacity="0.6" style="stroke:var(--text-muted)"/>
+              <!-- detection box -->
+              <g class="viz-pulse" style="stroke:var(--accent)">
+                <path d="M 26 20 L 26 30 M 26 20 L 36 20" fill="none" stroke-width="2"/>
+                <path d="M 94 20 L 94 30 M 94 20 L 84 20" fill="none" stroke-width="2"/>
+                <path d="M 26 98 L 26 88 M 26 98 L 36 98" fill="none" stroke-width="2"/>
+                <path d="M 94 98 L 94 88 M 94 98 L 84 98" fill="none" stroke-width="2"/>
+              </g>
+              <rect x="26" y="102" width="68" height="12" rx="2" opacity="0.9" style="fill:var(--accent)"/>
+              <text x="60" y="111" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6" font-weight="600" style="fill:var(--bg)">LBPH MATCH</text>
+            </g>
+
+            <!-- arrow -->
+            <path d="M 156 120 L 178 120" stroke-width="1" opacity="0.6" stroke-dasharray="3,3" style="stroke:var(--accent)"/>
+            <polygon points="178,117 183,120 178,123" opacity="0.7" style="fill:var(--accent)"/>
+
+            <!-- DB table -->
+            <g transform="translate(190, 70)">
+              <rect width="122" height="100" rx="4" stroke-width="1" style="fill:var(--bg-card);stroke:var(--border)"/>
+              <rect width="122" height="18" rx="4" opacity="0.15" style="fill:var(--accent)"/>
+              <text x="10" y="12" font-family="JetBrains Mono, monospace" font-size="6" letter-spacing="1" style="fill:var(--accent)">attendance</text>
+              <line x1="0" y1="18" x2="122" y2="18" stroke-width="0.8" style="stroke:var(--border)"/>
+              <g font-family="JetBrains Mono, monospace" font-size="5.5" style="fill:var(--text-muted)">
+                <text x="10" y="32">id_014 · 09:02 · P</text>
+                <text x="10" y="46">id_015 · 09:03 · P</text>
+                <text x="10" y="60">id_016 · 09:05 · P</text>
+                <text x="10" y="74">id_017 · 09:06 · P</text>
+              </g>
+              <line x1="0" y1="82" x2="122" y2="82" stroke-width="0.8" style="stroke:var(--border)"/>
+              <text x="10" y="94" font-family="JetBrains Mono, monospace" font-size="5.5" style="fill:var(--text-dim)">MySQL · auto-logged</text>
+            </g>
+
+            <text x="170" y="240" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="2" style="fill:var(--text-dim)">FACE → RECORD</text>
+          </svg>
+        </div>
+        <div class="project-content">
+          <div class="project-head">
+            <span class="project-num">03 / Computer vision · Systems</span>
+          </div>
+          <h3>Facial Recognition <em>Attendance</em> System</h3>
+          <p class="project-desc">
+            A real-time attendance system that identifies enrolled users from a live camera feed
+            and writes the record straight to a database — removing manual roll-call entirely.
+          </p>
+          <div class="metrics">
+            <div class="metric"><div class="metric-num">92%</div><div class="metric-label">Recognition accuracy</div></div>
+            <div class="metric"><div class="metric-num">30</div><div class="metric-label">Enrolled users</div></div>
+            <div class="metric"><div class="metric-num">Live</div><div class="metric-label">Real-time capture</div></div>
+          </div>
+          <ul>
+            <li>Real-time face recognition built with the <strong>LBPH</strong> algorithm in OpenCV</li>
+            <li>Integrated with a <strong>MySQL</strong> database for automated, timestamped record-keeping</li>
+            <li><strong>92% recognition accuracy</strong> across 30 enrolled users under varied lighting conditions</li>
+            <li>Enrolment pipeline handles face capture, preprocessing, and training of the recogniser</li>
+          </ul>
+          <div class="tech-stack">
+            <span class="tech">Python</span>
+            <span class="tech">OpenCV</span>
+            <span class="tech">LBPH</span>
+            <span class="tech">MySQL</span>
+            <span class="tech">NumPy</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 4 — RAG Research Paper Assistant -->
+      <article class="project">
+        <div class="project-visual">
+          <svg viewBox="0 0 340 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Diagram of research PDFs split into chunks, embedded into a FAISS index, retrieved for a question and answered by an LLM with a page citation">
+            <defs>
+              <pattern id="gridD" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke-width="0.5" opacity="0.5" style="stroke:var(--border)"/>
+              </pattern>
+            </defs>
+            <rect width="340" height="280" fill="url(#gridD)"/>
+
+            <!-- stacked PDFs -->
+            <g transform="translate(22, 62)">
+              <rect x="8" y="0" width="58" height="76" rx="3" stroke-width="0.8" style="fill:var(--bg-card);stroke:var(--border)"/>
+              <rect x="4" y="5" width="58" height="76" rx="3" stroke-width="0.8" style="fill:var(--bg-card);stroke:var(--border)"/>
+              <rect x="0" y="10" width="58" height="76" rx="3" stroke-width="1" style="fill:var(--bg-soft);stroke:var(--text-muted)"/>
+              <text x="8" y="24" font-family="JetBrains Mono, monospace" font-size="6" font-weight="600" style="fill:var(--accent)">PDF</text>
+              <g stroke-width="1" opacity="0.5" style="stroke:var(--text-muted)">
+                <line x1="8" y1="34" x2="50" y2="34"/>
+                <line x1="8" y1="42" x2="46" y2="42"/>
+                <line x1="8" y1="50" x2="50" y2="50"/>
+                <line x1="8" y1="58" x2="40" y2="58"/>
+                <line x1="8" y1="66" x2="48" y2="66"/>
+              </g>
+              <text x="29" y="102" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6" letter-spacing="1" style="fill:var(--text-dim)">PAPERS</text>
+            </g>
+
+            <path d="M 88 110 L 104 110" stroke-width="1" opacity="0.6" stroke-dasharray="3,3" style="stroke:var(--accent)"/>
+
+            <!-- chunks -->
+            <g transform="translate(108, 74)">
+              <rect width="44" height="12" rx="2" stroke-width="0.8" style="fill:var(--bg-soft);stroke:var(--border)"/>
+              <rect y="17" width="44" height="12" rx="2" stroke-width="0.8" style="fill:var(--bg-soft);stroke:var(--border)"/>
+              <rect y="34" width="44" height="12" rx="2" opacity="0.85" style="fill:var(--accent)"/>
+              <rect y="51" width="44" height="12" rx="2" stroke-width="0.8" style="fill:var(--bg-soft);stroke:var(--border)"/>
+              <text x="22" y="9" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="5" style="fill:var(--text-muted)">p.1 · c0</text>
+              <text x="22" y="26" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="5" style="fill:var(--text-muted)">p.2 · c1</text>
+              <text x="22" y="43" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="5" font-weight="600" style="fill:var(--bg)">p.4 · c2</text>
+              <text x="22" y="60" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="5" style="fill:var(--text-muted)">p.6 · c3</text>
+              <text x="22" y="78" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6" letter-spacing="1" style="fill:var(--text-dim)">CHUNKS</text>
+            </g>
+
+            <path d="M 156 110 L 172 110" stroke-width="1" opacity="0.6" stroke-dasharray="3,3" style="stroke:var(--accent)"/>
+
+            <!-- vector index -->
+            <g transform="translate(176, 74)">
+              <rect width="56" height="64" rx="4" stroke-width="1" style="fill:var(--bg-card);stroke:var(--border)"/>
+              <g style="fill:var(--text-muted)" opacity="0.55">
+                <circle cx="12" cy="14" r="2"/><circle cx="26" cy="20" r="2"/><circle cx="44" cy="12" r="2"/>
+                <circle cx="16" cy="40" r="2"/><circle cx="40" cy="48" r="2"/><circle cx="10" cy="54" r="2"/>
+              </g>
+              <circle cx="32" cy="34" r="3" style="fill:var(--accent)"/>
+              <circle cx="32" cy="34" r="10" fill="none" stroke-width="1" stroke-dasharray="2,2" class="viz-pulse" style="stroke:var(--accent)"/>
+              <text x="28" y="78" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6" letter-spacing="1" style="fill:var(--text-dim)">FAISS · TOP-K</text>
+            </g>
+
+            <path d="M 236 110 L 252 110" stroke-width="1" opacity="0.6" stroke-dasharray="3,3" style="stroke:var(--accent)"/>
+            <polygon points="252,107 257,110 252,113" opacity="0.7" style="fill:var(--accent)"/>
+
+            <!-- LLM answer -->
+            <g transform="translate(260, 80)">
+              <rect width="62" height="52" rx="4" stroke-width="1" style="fill:var(--bg-soft);stroke:var(--accent)"/>
+              <text x="31" y="14" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6" font-weight="600" style="fill:var(--accent)">LLM</text>
+              <g stroke-width="1" opacity="0.5" style="stroke:var(--text-muted)">
+                <line x1="8" y1="24" x2="54" y2="24"/>
+                <line x1="8" y1="31" x2="46" y2="31"/>
+              </g>
+              <rect x="8" y="37" width="46" height="9" rx="2" opacity="0.9" style="fill:var(--accent)"/>
+              <text x="31" y="43.5" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="4.6" font-weight="600" style="fill:var(--bg)">[paper, p. 4]</text>
+              <text x="31" y="66" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="6" letter-spacing="1" style="fill:var(--text-dim)">CITED</text>
+            </g>
+
+            <g transform="translate(170, 232)">
+              <text text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" letter-spacing="2" style="fill:var(--text-dim)">RETRIEVE &middot; GROUND &middot; CITE</text>
+              <text y="15" text-anchor="middle" font-family="Fraunces, serif" font-size="11" font-style="italic" style="fill:var(--accent)">Answers from your papers only</text>
+            </g>
+          </svg>
+        </div>
+        <div class="project-content">
+          <div class="project-head">
+            <span class="project-num">04 / Generative AI · RAG · NLP</span>
+          </div>
+          <h3>RAG <em>Research Paper</em> Assistant</h3>
+          <p class="project-desc">
+            Upload research papers as PDFs, ask questions in plain English, and get answers grounded
+            <strong>only</strong> in those papers — each one cited with the document name, page
+            number, and the supporting excerpt. If the papers don't contain the answer, the assistant
+            says so instead of guessing.
+          </p>
+          <div class="metrics">
+            <div class="metric"><div class="metric-num">Multi-PDF</div><div class="metric-label">Cross-paper search</div></div>
+            <div class="metric"><div class="metric-num">Page-level</div><div class="metric-label">Citations</div></div>
+            <div class="metric"><div class="metric-num">384-d</div><div class="metric-label">MiniLM embeddings</div></div>
+            <div class="metric"><div class="metric-num">5</div><div class="metric-label">REST endpoints</div></div>
+          </div>
+          <ul>
+            <li>End-to-end <strong>retrieval-augmented generation</strong> pipeline: PDF upload → page-aware extraction with <strong>PyMuPDF</strong> → cleaning → overlapping, word-safe chunking → embeddings → <strong>FAISS</strong> vector index</li>
+            <li>Local <strong>sentence-transformers</strong> embeddings (all-MiniLM-L6-v2) with cosine-similarity top-K retrieval, per-paper filtering, and a similarity threshold that skips the LLM when no evidence is found</li>
+            <li>Strict grounded-generation prompt with <strong>[file, p. N] citations</strong> and a fixed refusal when the evidence is insufficient; follow-up questions are rewritten into standalone queries so chat history is never used as evidence</li>
+            <li>Persistent index with per-document deletion and <strong>SHA-256 duplicate detection</strong>; upload validation (PDF signature, size limit, sanitised filenames) and structured API errors</li>
+            <li><strong>FastAPI</strong> REST backend with a responsive HTML/CSS/JS interface, Docker support, a <strong>pytest</strong> suite, and an evaluation script reporting hit@k and MRR for retrieval</li>
+            <li>Works with any OpenAI-compatible LLM — including local models through Ollama</li>
+          </ul>
+          <div class="tech-stack">
+            <span class="tech">Python</span>
+            <span class="tech">FastAPI</span>
+            <span class="tech">RAG</span>
+            <span class="tech">LLMs</span>
+            <span class="tech">FAISS</span>
+            <span class="tech">sentence-transformers</span>
+            <span class="tech">PyMuPDF</span>
+            <span class="tech">Pydantic</span>
+            <span class="tech">Docker</span>
+            <span class="tech">pytest</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" aria-labelledby="skills-title">
+  <div class="container">
+    <span class="section-num">04 / Technical skills</span>
+    <h2 class="section-title" id="skills-title">Tools &amp; <em>technologies.</em></h2>
+    <p class="section-intro">
+      The stack behind the projects above — modelling, analysis, and the reporting tools that
+      get results in front of people who need them.
+    </p>
+
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4>Languages</h4>
+        <ul class="skill-list">
+          <li>Python</li>
+          <li>SQL</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Machine Learning &amp; AI</h4>
+        <ul class="skill-list">
+          <li>Machine Learning</li>
+          <li>Deep Learning</li>
+          <li>CNNs</li>
+          <li>Transfer Learning</li>
+          <li>Natural Language Processing</li>
+          <li>Predictive Modelling</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Generative AI &amp; LLMs</h4>
+        <ul class="skill-list">
+          <li>Retrieval-Augmented Generation (RAG)</li>
+          <li>LLM Integration (OpenAI API, Ollama)</li>
+          <li>Embeddings &amp; Semantic Search</li>
+          <li>Vector Search (FAISS)</li>
+          <li>Prompt Engineering</li>
+          <li>Claude AI &amp; AI Workflow Automation</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Libraries &amp; Frameworks</h4>
+        <ul class="skill-list">
+          <li>TensorFlow / Keras</li>
+          <li>Scikit-learn</li>
+          <li>XGBoost</li>
+          <li>OpenCV</li>
+          <li>Sentence-Transformers</li>
+          <li>PyMuPDF</li>
+          <li>Pandas / NumPy</li>
+          <li>Matplotlib / Seaborn</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Backend &amp; APIs</h4>
+        <ul class="skill-list">
+          <li>FastAPI</li>
+          <li>REST API Design</li>
+          <li>Pydantic</li>
+          <li>HTML / CSS / JavaScript</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Core Competencies</h4>
+        <ul class="skill-list">
+          <li>Exploratory Data Analysis</li>
+          <li>Feature Engineering</li>
+          <li>Data Cleaning</li>
+          <li>Model Evaluation</li>
+          <li>Statistical Analysis</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Data &amp; BI Tools</h4>
+        <ul class="skill-list">
+          <li>Power BI</li>
+          <li>Excel</li>
+          <li>Data Visualisation</li>
+          <li>Dashboards &amp; Reporting</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Databases &amp; Developer Tools</h4>
+        <ul class="skill-list">
+          <li>MySQL</li>
+          <li>MongoDB</li>
+          <li>Docker</li>
+          <li>pytest</li>
+          <li>Git / GitHub</li>
+          <li>Jupyter Notebook</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" aria-labelledby="education-title">
+  <div class="container">
+    <span class="section-num">05 / Education</span>
+    <h2 class="section-title" id="education-title">Academic <em>background.</em></h2>
+
+    <div class="edu-card">
+      <div class="edu-info">
+        <h3>VVIT College, Namburu</h3>
+        <p class="edu-degree">Bachelor of Engineering — Artificial Intelligence &amp; Data Science</p>
+        <p class="edu-meta">Expected April 2027 · Andhra Pradesh, India</p>
+        <p class="edu-courses">
+          <strong>Relevant coursework:</strong> Artificial Intelligence &amp; Machine Learning ·
+          Data Science · Data Structures and Algorithms
+        </p>
+      </div>
+      <div class="cgpa">
+        <div class="cgpa-num">8.60<em>/10</em></div>
+        <div class="cgpa-label">GPA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" aria-labelledby="certifications-title">
+  <div class="container">
+    <span class="section-num">06 / Credentials</span>
+    <h2 class="section-title" id="certifications-title">Certifications &amp; <em>training.</em></h2>
+    <p class="section-intro">
+      Industry programmes, job simulations, and structured coursework from Google Cloud, Deloitte,
+      NASSCOM, Infosys, MongoDB, and others — each one linked to its original credential so it can be verified.
+    </p>
+    <div class="cert-summary" aria-label="Credential summary">
+      <span><b>04</b>Artificial Intelligence &amp; Machine Learning</span>
+      <span><b>03</b>Python &amp; Software Development</span>
+      <span><b>03</b>Data Analytics &amp; Business Intelligence</span>
+      <span><b>04</b>SQL &amp; Databases</span>
+      <span><b>01</b>Design</span>
+    </div>
+    <div class="cert-group">
+      <div class="cert-group-head"><h3>Artificial Intelligence &amp; Machine Learning</h3><span class="cert-group-count">04 CREDENTIALS</span></div>
+      <div class="cert-grid">
+        <a class="cert cert-featured" href="https://www.linkedin.com/feed/update/urn:li:activity:7472886095534297088/" target="_blank" rel="noopener" aria-label="View credential: Generative AI Program — Google Cloud Skills Boost (opens LinkedIn)">
+          <span class="cert-badge">Featured</span>
+          <div class="cert-type">Generative AI</div>
+          <h4>Generative AI Program</h4>
+          <p class="cert-detail">45 hours · 24 skill badges</p>
+          <p class="cert-source">Google Cloud Skills Boost</p>
+          <span class="cert-verify">View credential <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+        </a>
+        <a class="cert" href="https://www.linkedin.com/feed/update/urn:li:activity:7491059634200543233/" target="_blank" rel="noopener" aria-label="View credential: AI / Machine Learning Engineer Internship — Blackbucks Education · APSCHE (opens LinkedIn)">
+          <div class="cert-type">Internship</div>
+          <h4>AI / Machine Learning Engineer Internship</h4>
+          <p class="cert-source">Blackbucks Education · APSCHE</p>
+          <span class="cert-verify">View credential <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+        </a>
+        <a class="cert" href="https://www.linkedin.com/feed/update/urn:li:activity:7483448910779240448/" target="_blank" rel="noopener" aria-label="View credential: AI – Data Engineering Analyst — NASSCOM · Skill India Digital Hub (opens LinkedIn)">
+          <div class="cert-type">Skill India</div>
+          <h4>AI – Data Engineering Analyst</h4>
+          <p class="cert-source">NASSCOM · Skill India Digital Hub</p>
+          <span class="cert-verify">View credential <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+        </a>
+        <a class="cert" href="https://www.linkedin.com/feed/update/urn:li:activity:7472887185575370752/" target="_blank" rel="noopener" aria-label="View credential: Explore Machine Learning Using Python — Infosys Springboard (opens LinkedIn)">
+          <div class="cert-type">Machine Learning</div>
+          <h4>Explore Machine Learning Using Python</h4>
+          <p class="cert-source">Infosys Springboard</p>
+          <span class="cert-verify">View credential <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+        </a>
+      </div>
+    </div>
+    <div class="cert-group">
+      <div class="cert-group-head"><h3>Python &amp; Software Development</h3><span class="cert-group-count">03 CREDENTIALS</span></div>
+      <div class="cert-grid">
+        <a class="cert" href="https://www.linkedin.com/feed/update/urn:li:activity:7519321044877201408/" target="_blank" rel="noopener" aria-label="View credential: Full Stack Python Developer — StudyEasy · Udemy (opens LinkedIn)">
+          <div class="cert-type">Full Stack</div>
+          <h4>Full Stack Python Developer</h4>
+          <p class="cert-detail">Python · FastAPI · React · Vibe Coding</p>
+          <p class="cert-source">StudyEasy · Udemy</p>
+          <span class="cert-verify">View credential <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+        </a>
+        <a class="cert" href="https://www.linkedin.com/feed/update/urn:li:activity:7472887329804873728/" target="_blank" rel="noopener" aria-label="View credential: Python for Data Science — Infosys Springboard (opens LinkedIn)">
+          <div class="cert-type">Data Science</div>
+          <h4>Python for Data Science</h4>
+          <p class="cert-source">Infosys Springboard</p>
+          <span class="cert-verify">View credential <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+        </a>
+        <a class="cert" href="https://www.linkedin.com/feed/update/urn:li:activity:7472886471373275137/" target="_blank" rel="noopener" aria-label="View credential: Basics of Python — Infosys Springboard (opens LinkedIn)">
+          <div class="cert-type">Programming</div>
+          <h4>Basics of Python</h4>
+          <p class="cert-source">Infosys Springboard</p>
+          <span class="cert-verify">View credential <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+        </a>
+      </div>
+    </div>
+    <div class="cert-group">
+      <div class="cert-group-head"><h3>Data Analytics &amp; Business Intelligence</h3><span class="cert-group-count">03 CREDENTIALS</span></div>
+      <div class="cert-grid">
+        <a class="cert" href="https://www.linkedin.com/feed/update/urn:li:activity:7480932593929015296/" target="_blank" rel="noopener" aria-label="View credential: Data Analytics Job Simulation — Deloitte · via Forage (opens LinkedIn)">
+          <div class="cert-type">Job Simulation</div>
+          <h4>Data Analytics Job Simulation</h4>
+          <p class="cert-source">Deloitte · via Forage</p>
+          <span class="cert-verify">View credential <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+        </a>
+        <a class="cert" href="https://www.linkedin.com/feed/update/urn:li:activity:7473027486478692352/" target="_blank" rel="noopener" aria-label="View credential: Power BI Administration: Administering the Power BI Service — Udemy (opens LinkedIn)">
+          <div class="cert-type">Business Intelligence</div>
+          <h4>Power BI Administration: Administering the Power BI Service</h4>
+          <p class="cert-source">Udemy</p>
+          <span class="cert-verify">View credential <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+        </a>
+        <a class="cert" href="https://www.linkedin.com/feed/update/urn:li:activity:7487451223537733633/" target="_blank" rel="noopener" aria-label="View credential: 30 Days AI-Powered Excel Micro Course — SkillCourse (opens LinkedIn)">
+          <div class="cert-type">Spreadsheets</div>
+          <h4>30 Days AI-Powered Excel Micro Course</h4>
+          <p class="cert-source">SkillCourse</p>
+          <span class="cert-verify">View credential <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+        </a>
+      </div>
+    </div>
+    <div class="cert-group">
+      <div class="cert-group-head"><h3>SQL &amp; Databases</h3><span class="cert-group-count">04 CREDENTIALS</span></div>
+      <div class="cert-grid">
+        <a class="cert" href="https://www.linkedin.com/feed/update/urn:li:activity:7472884092355743744/" target="_blank" rel="noopener" aria-label="View credential: Learn SQL — CodeChef (opens LinkedIn)">
+          <div class="cert-type">SQL</div>
+          <h4>Learn SQL</h4>
+          <p class="cert-source">CodeChef</p>
+          <span class="cert-verify">View credential <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+        </a>
+        <a class="cert" href="https://www.linkedin.com/feed/update/urn:li:activity:7472885208623517696/" target="_blank" rel="noopener" aria-label="View credential: Learn Advanced SQL — CodeChef (opens LinkedIn)">
+          <div class="cert-type">SQL</div>
+          <h4>Learn Advanced SQL</h4>
+          <p class="cert-source">CodeChef</p>
+          <span class="cert-verify">View credential <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+        </a>
+        <a class="cert" href="https://www.linkedin.com/feed/update/urn:li:activity:7472885372767752192/" target="_blank" rel="noopener" aria-label="View credential: SQL Roadmap for Data Analysis — CodeChef (opens LinkedIn)">
+          <div class="cert-type">SQL · Analytics</div>
+          <h4>SQL Roadmap for Data Analysis</h4>
+          <p class="cert-source">CodeChef</p>
+          <span class="cert-verify">View credential <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+        </a>
+        <a class="cert" href="https://www.linkedin.com/feed/update/urn:li:activity:7480931420442583040/" target="_blank" rel="noopener" aria-label="View credential: MongoDB Basics for Students — MongoDB (opens LinkedIn)">
+          <div class="cert-type">NoSQL</div>
+          <h4>MongoDB Basics for Students</h4>
+          <p class="cert-source">MongoDB</p>
+          <span class="cert-verify">View credential <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+        </a>
+      </div>
+    </div>
+    <div class="cert-group">
+      <div class="cert-group-head"><h3>Design</h3><span class="cert-group-count">01 CREDENTIAL</span></div>
+      <div class="cert-grid">
+        <a class="cert" href="https://www.linkedin.com/feed/update/urn:li:activity:7472884626332520448/" target="_blank" rel="noopener" aria-label="View credential: UI &amp; UX Assessment — LearnTube by CareerNinja (opens LinkedIn)">
+          <div class="cert-type">Assessment</div>
+          <h4>UI &amp; UX Assessment</h4>
+          <p class="cert-source">LearnTube by CareerNinja</p>
+          <span class="cert-verify">View credential <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section" aria-labelledby="contact-title">
+  <div class="container contact-inner">
+    <span class="section-num">07 / Let's connect</span>
+    <h2 class="section-title" id="contact-title">Get in <em>touch.</em></h2>
+    <p class="section-intro">
+      I'm looking for an entry-level Data Analyst, Data Scientist, or Machine Learning Engineer
+      role, and I'm always happy to talk about applied AI. The fastest way to reach me is email.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:kavyanandiniallamsetty@gmail.com" class="btn btn-primary">Email me →</a>
+      <a href="resume.pdf" target="_blank" rel="noopener" class="btn btn-secondary">Download résumé</a>
+    </div>
+
+    <div class="contact-details">
+      <div class="contact-item">
+        <div class="contact-label">Email</div>
+        <a href="mailto:kavyanandiniallamsetty@gmail.com">kavyanandiniallamsetty@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">LinkedIn</div>
+        <a href="https://www.linkedin.com/in/kavya-nandini-allamsetty/" target="_blank" rel="noopener">in/kavya-nandini-allamsetty</a>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Location</div>
+        <span>Guntur, Andhra Pradesh 522002</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGN-OFF -->
+<section class="signoff" aria-label="Closing note">
+  <div class="container">
+    <span class="script" lang="es">¡Gracias!</span>
+    <p class="signoff-line">
+      Thank you for taking the time to look through my work — I hope something here
+      was worth your while.
+    </p>
+    <p class="signoff-meta" lang="es">Hasta pronto · Until next time</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>© <span id="year">2026</span> Kavya Nandini Allamsetty · Guntur, India</div>
+      <div class="footer-links">
+        <a href="mailto:kavyanandiniallamsetty@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/kavya-nandini-allamsetty/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Theme toggle
+const root = document.documentElement;
+const toggle = document.getElementById('themeToggle');
+const saved = (() => { try { return localStorage.getItem('theme'); } catch(e){ return null; } })();
+if(saved === 'light' || saved === 'dark'){
+  root.setAttribute('data-theme', saved);
+}
+toggle.addEventListener('click', () => {
+  const current = root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+  const next = current === 'light' ? 'dark' : 'light';
+  root.setAttribute('data-theme', next);
+  toggle.setAttribute('aria-label', next === 'light' ? 'Switch to dark mode' : 'Switch to light mode');
+  try { localStorage.setItem('theme', next); } catch(e){}
+});
+
+// Current year in footer
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Smooth reveal on scroll (skipped when reduced motion is preferred)
+const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!prefersReduced){
+  const reveals = document.querySelectorAll('section, .hero');
+  reveals.forEach(el => el.classList.add('reveal'));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.08});
+  reveals.forEach(el => io.observe(el));
+}
+
+// Hide portrait gracefully if the image is missing
+const portrait = document.querySelector('.hero-photo img');
+if(portrait){
+  portrait.addEventListener('error', () => {
+    const wrap = portrait.closest('.hero-photo');
+    if(wrap) wrap.style.display = 'none';
+  });
+}
+</script>
+
+</body>
+</html>
